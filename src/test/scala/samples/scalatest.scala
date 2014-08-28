@@ -56,7 +56,16 @@ class SetSpec extends FeatureSpec with GivenWhenThen {
       Set.empty.size should be (0)
     }
   }
+  feature("Accessing an element by a larger index") {
+    Given("a 3 items set")
+    val s = 1::2::3::Nil
+    Then("The IOOBE should be thrown when trying to access the item with idx 3")
+    intercept[IndexOutOfBoundsException] {
+      print(s(3))
+    }
+  }
 }
+
 class StringSpec extends FeatureSpec with GivenWhenThen {
   feature("The scala String type") {
     scenario("startWith feature") {
