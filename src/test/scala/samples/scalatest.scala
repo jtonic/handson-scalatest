@@ -53,12 +53,12 @@ class SetSpec extends FeatureSpec with GivenWhenThen {
   feature("The scala set type") {
     scenario("empty") {
       Then("the size is empty")
-      Set.empty.size should be (0)
+      Set.empty.size should be(0)
     }
   }
   feature("Accessing an element by a larger index") {
     Given("a 3 items set")
-    val s = 1::2::3::Nil
+    val s = 1 :: 2 :: 3 :: Nil
     Then("The IOOBE should be thrown when trying to access the item with idx 3")
     intercept[IndexOutOfBoundsException] {
       print(s(3))
@@ -72,8 +72,40 @@ class StringSpec extends FeatureSpec with GivenWhenThen {
       Given("It starts with Tony")
       val str = "Tony (a stupid java developer) is super cool!!!"
       Then("the size is empty")
-        str should (startWith("Tony") and endWith("cool!!!") and not include "stupid")
+      str should (startWith("Tony") and endWith("cool!!!") and not include "stupid")
     }
+  }
+}
+
+class JsonSpec extends FeatureSpec with GivenWhenThen {
+
+  import play.api.libs.json._
+
+  scenario("JSON support of play") {
+    Given("A json string")
+    val json: JsValue = Json.parse(
+      """
+          {
+            "name" : "Watership Down",
+            "location" : {
+              "lat" : 51.235685,
+              "long" : -1.309197
+            },
+            "residents" : [ {
+              "name" : "Fiver",
+              "age" : 4,
+              "role" : null
+            }, {
+              "name" : "Bigwig",
+              "age" : 6,
+              "role" : "Owsla"
+            } ]
+          }
+          """)
+    Then("The name of the jsValue is 'Watership Down'")
+    print(json)
+    json.\("name").as[String] should equal("Watership Down")
+    json.\("location").\("lat").as[Double] should equal(51.235685)
   }
 }
 
