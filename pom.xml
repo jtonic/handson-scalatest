@@ -41,20 +41,34 @@
             <groupId>org.scalacheck</groupId>
             <artifactId>scalacheck_${scala-language-level}</artifactId>
             <version>1.11.5</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.specs2</groupId>
             <artifactId>specs2_${scala-language-level}</artifactId>
             <version>2.3.13</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.scalatest</groupId>
             <artifactId>scalatest_${scala-language-level}</artifactId>
             <version>2.2.0</version>
+            <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.scalamock</groupId>
+            <artifactId>scalamock-core_2.11</artifactId>
+            <version>3.1.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.scalamock</groupId>
+            <artifactId>scalamock-scalatest-support_2.11</artifactId>
+            <version>3.1.2</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>com.typesafe.play</groupId>
             <artifactId>play-json_${scala-language-level}</artifactId>
