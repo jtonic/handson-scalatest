@@ -22,11 +22,16 @@ class FixtureBasedSpec extends fixture.FeatureSpec with GivenWhenThen {
       val st = stack
 
       When(f"Pushing a nine ${st.size}")
-        st.push(9)
+      st.push(9)
 
       Then(f"The size is ${st.size + 1}")
-        assert(st.size === 3)
+      assert(st.size === 3)
     }
+
+    scenario("Removing an item from a stack") {
+      pending
+    }
+
   }
 
 }

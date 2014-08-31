@@ -107,5 +107,14 @@ class JsonSpec extends FeatureSpec with GivenWhenThen {
     json.\("name").as[String] should equal("Watership Down")
     json.\("location").\("lat").as[Double] should equal(51.235685)
   }
+
+  ignore ("Json support of json4s") {
+    println("Not implemented!!!!")
+  }
+
+  scenario("Json support of lift-json") {
+    pending
+  }
+
 }
 
