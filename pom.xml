@@ -79,11 +79,12 @@
             <groupId>org.mongodb</groupId>
             <artifactId>casbah_${scala-language-level}</artifactId>
             <version>2.7.2</version>
+            <type>pom</type>
         </dependency>
     </dependencies>
 
     <build>
-        <sourceDirectory>src/main/scala</sourceDirectory>
+        <sourceDirectory>src/main/java</sourceDirectory>
         <testSourceDirectory>src/test/scala</testSourceDirectory>
         <plugins>
             <plugin>
@@ -139,6 +140,14 @@
         <repository>
             <id>typesafe</id>
             <url>http://repo.typesafe.com/typesafe/releases/</url>
+        </repository>
+        <repository>
+            <id>oss-sonatype</id>
+            <name>oss-sonatype</name>
+            <url>https://oss.sonatype.org/content/repositories/releases/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
 

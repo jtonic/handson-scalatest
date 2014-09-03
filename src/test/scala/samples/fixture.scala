@@ -1,11 +1,15 @@
+import org.scalatest.junit.JUnitRunner
 import org.scalatest.{Outcome, GivenWhenThen, fixture}
 
 import scala.collection.mutable._
+
+import org.junit.runner._
 
 /**
  * Created by jtonic on 30.08.2014.
  */
 
+@RunWith(classOf[JUnitRunner])
 class FixtureBasedSpec extends fixture.FeatureSpec with GivenWhenThen {
 
   override type FixtureParam = Stack[Int]

@@ -49,6 +49,7 @@ class TVSetSpec extends FeatureSpec with GivenWhenThen {
   }
 }
 
+@RunWith(classOf[JUnitRunner])
 class SetSpec extends FeatureSpec with GivenWhenThen {
   feature("The scala set type") {
     scenario("empty") {
@@ -66,6 +67,7 @@ class SetSpec extends FeatureSpec with GivenWhenThen {
   }
 }
 
+@RunWith(classOf[JUnitRunner])
 class StringSpec extends FeatureSpec with GivenWhenThen {
   feature("The scala String type") {
     scenario("startWith feature") {
@@ -77,6 +79,7 @@ class StringSpec extends FeatureSpec with GivenWhenThen {
   }
 }
 
+@RunWith(classOf[JUnitRunner])
 class JsonSpec extends FeatureSpec with GivenWhenThen {
 
   import play.api.libs.json._
