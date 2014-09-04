@@ -43,8 +43,31 @@ class SimpleMathTest extends FunSpec with Matchers with GivenWhenThen with Gener
     }
   }
 
+  val albums = for {
+    age <- Gen.choose(20, 40)
+    fName <- Gen.alphaStr
+    lName <- Gen.alphaStr
+  } yield {
+    println(s"Generate an album.")
+    new Album(new Artist(fName, Some("Ernest"), lName), age)
+  }
+
+  describe("Albums of younger bands") {
+    it("are performed by younger band (older than 20 and younger than 40), really?") {
+      forAll(albums) {
+        album =>
+          println(f"band age : ${album.playedByYounger}")
+          album.playedByYounger should be (true)
+      }
+    }
+  }
+
   class Artist(fName: String, mName: Option[String], lName: String) {
     def fullName = s"$fName${if (mName.isEmpty) " " else " " + mName.get + " "}$lName"
+  }
+
+  class Album(val artist: Artist, val age: Int) {
+    def playedByYounger = 20 <= age && age <= 40
   }
 
 }
