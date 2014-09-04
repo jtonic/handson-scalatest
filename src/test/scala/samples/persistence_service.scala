@@ -9,6 +9,7 @@ import ro.jtonic.handson.scalatest.{PersistenceService, PersonDao, Teacher}
  */
 @RunWith(classOf[JUnitRunner])
 class PersistenceServiceSpec extends FeatureSpec with GivenWhenThen with MockFactory {
+/*
   scenario("Save and retrieve a person") {
     Given("A person, a mocked dao and the persistence service")
     val personDao = mock[PersonDao]
@@ -24,5 +25,6 @@ class PersistenceServiceSpec extends FeatureSpec with GivenWhenThen with MockFac
     Then("Save the person")
     service.saveAndRetrieve(teacher)
   }
+*/
 }
 
