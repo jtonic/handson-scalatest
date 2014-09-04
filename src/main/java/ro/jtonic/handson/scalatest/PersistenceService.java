@@ -16,11 +16,16 @@ public class PersistenceService {
     }
 
     public Person findPerson(String ssn) {
-        return this.personDao.findPerson(ssn);
+        return this.personDao.find(ssn);
     }
 
     public Person saveAndRetrieve(Person person) {
         this.personDao.save(person);
-        return this.personDao.findPerson(person.getSsn());
+        return this.personDao.find(person.getSsn());
+    }
+
+    public Teacher saveAndRetrieve(Teacher teacher) {
+        this.personDao.save(teacher);
+        return this.personDao.find(teacher.getId());
     }
 }

@@ -5,15 +5,13 @@ package ro.jtonic.handson.scalatest;
  */
 public class Person {
     private String ssn;
-    private final String antonel;
-    private final String pazargic;
     private String firstName;
     private String lastName;
 
-    public Person(String ssn, String antonel, String pazargic) {
+    public Person(String ssn, String fName, String lName) {
         this.ssn = ssn;
-        this.antonel = antonel;
-        this.pazargic = pazargic;
+        this.firstName = fName;
+        this.lastName = lName;
     }
 
     public String getSsn() {
