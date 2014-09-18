@@ -49,6 +49,7 @@ class TVSetSpec extends FeatureSpec with GivenWhenThen {
   }
 }
 
+@RunWith(classOf[JUnitRunner])
 class SetSpec extends FeatureSpec with GivenWhenThen {
   feature("The scala set type") {
     scenario("empty") {
@@ -66,17 +67,19 @@ class SetSpec extends FeatureSpec with GivenWhenThen {
   }
 }
 
+@RunWith(classOf[JUnitRunner])
 class StringSpec extends FeatureSpec with GivenWhenThen {
   feature("The scala String type") {
     scenario("startWith feature") {
       Given("It starts with Tony")
-      val str = "Tony (a stupid java developer) is super cool!!!"
+      val str = "Tony (a stuppid java developer) is super cool!!!"
       Then("the size is empty")
       str should (startWith("Tony") and endWith("cool!!!") and not include "stupid")
     }
   }
 }
 
+@RunWith(classOf[JUnitRunner])
 class JsonSpec extends FeatureSpec with GivenWhenThen {
 
   import play.api.libs.json._

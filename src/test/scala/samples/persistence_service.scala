@@ -1,26 +1,36 @@
+import org.junit.runner.RunWith
 import org.scalamock.scalatest.MockFactory
+import org.scalatest.junit.JUnitRunner
 import org.scalatest.{FeatureSpec, GivenWhenThen}
-import ro.jtonic.handson.scalatest.{PersistenceService, Person, PersonDao}
 
 /**
  * Created by jtonic on 30.08.2014.
  */
 
+@RunWith(classOf[JUnitRunner])
 class PersistenceServiceSpec extends FeatureSpec with GivenWhenThen with MockFactory {
-  scenario("Save and retrieve a person") {
+
+  ignore("Save and retrieve a person") {
+    // Uncomment the code below and un-ignore the scenario to reproduce the scalamock issue
+    // https://github.com/paulbutcher/ScalaMock/issues/73
+
+/*
     Given("A person, a mocked dao and the persistence service")
-    val personDao = mock[PersonDao]
-    val person: Person = new Person("1112", "Antonel", "Pazargic")
+
+    val person = new Person("1112", "Antonel", "Pazargic")
+    val teacher = new Teacher(1L, "Antonel Pazargic")
 
     val service = new PersistenceService(personDao)
     When("have some expectations")
-    inSequence {
-      (personDao.save _).expects(person).once()
-      (personDao.findPerson _).expects(person.getSsn).once()
+    inAnyOrder {
+      (personDao.save(_: Teacher)).expects(teacher).once()
+//      (personDao.find(_: Long)).expects(1L).once()
     }
 
     Then("Save the person")
-    service.saveAndRetrieve(person)
+    service.saveAndRetrieve(teacher)
+*/
   }
+
 }
 
